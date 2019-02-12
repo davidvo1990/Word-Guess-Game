@@ -222,7 +222,7 @@ function ifWin(showarray) {
         document.getElementById("warning").innerHTML = "YOU WIN!!!";
         //add picture of the win
         document.getElementById("showme").innerHTML = currentWord;
-        pic.setAttribute("src", "assets/images/" + currentWord + ".jpg");
+        pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
         document.onkeyup = function () { };
         //alert("YOU WIN!!!")
     }
@@ -236,7 +236,7 @@ function ifLose(live) {
         document.getElementById("warning").innerHTML = "Game Over!";
         document.getElementById("showme").innerHTML = currentWord;
         //add piture if lost
-        pic.setAttribute("src", "assets/images/" + currentWord + ".jpg");
+        pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
         document.onkeyup = function () { };
         //alert("Game Over!");
     }
