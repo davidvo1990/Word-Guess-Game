@@ -6,8 +6,9 @@
   <title></title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
   <!-- AND/OR YOUR OWN CSS -->
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -16,6 +17,41 @@
 </head>
 
 <body>
+  <!-- header of hangman -->
+  <div class="top container">
+    <img class="title" src="assets/images/hangman.jpg" alt="title">
+  </div>
+  <div class="container">
+    <!-- content of hangmen -->
+    <div class="col-6 game">
+      <div class="topic">
+        <h1 class="head">HangMan Game</h1>
+        <h3 class="head">Marvel Edition</h3>
+      </div>
+      <p>Let play The Hangman Game Mavel Edition!!!</p>
+      <!-- button to start the game, click to play -->
+      <button class="button start" id="start" type="button" onclick="getWord()">Play</button>
+      <button class="button reset" type="button" onclick="reset()">Reset</button>
+      
+      <p id="play"></p>
+      <p id="showme"> </p>
+      <p class="pre">Show your guess:</p>
+      <p id="showbox"></p>
+      <p class="pre">You had use these words:</p>
+      <p id="usedword"></p>
+      <p class="pre">Correct:</p>
+      <p id="correctword"></p>
+      <p class="pre">Wrong:</p>
+      <p id="wrongword"></p>
+      <p id="warning"></p>
+      <span class="pre">Life you have left:</span>
+      <span id="lives"></span>
+    </div>
+    <!-- image show correct answer -->
+    <div class="col-6">
+      <img id="pic" img src="assets/images/marvel.png">
+    </div>
+  </div>
 
   <!-- Link to your JavaScript -->
   <script type="text/javascript" src="assets/javascript/game.js"></script>
