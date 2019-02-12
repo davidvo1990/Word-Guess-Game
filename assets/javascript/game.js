@@ -19,6 +19,7 @@ var showarray = [];
 var isUsed;
 var corr;
 var wordJoin;
+var imagesName;
 ///////////////////////////////////////////////////////
 /*When click play!
 get a word randomly
@@ -32,6 +33,7 @@ if live === 0 then game over!
 // get word on click button function and assign to currentWord 
 function getWord() {
     currentWord = words[Math.floor(Math.random() * words.length)];
+    imagesName = currentWord;
     currentWord = currentWord.toUpperCase();
     //console.log(currentWord);
     //document.getElementById("play").innerHTML= currentWord;
@@ -149,7 +151,7 @@ var func = {
             document.getElementById("warning").innerHTML = "YOU WIN!!!";
             //add picture of the win
             document.getElementById("showme").innerHTML = currentWord;
-            pic.setAttribute("src", "assets/images/" + currentWord.toLowerCase() + ".jpg");
+            pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
             document.onkeyup = function () { };
             //alert("YOU WIN!!!")
         }
@@ -161,7 +163,7 @@ var func = {
             document.getElementById("warning").innerHTML = "Game Over!";
             document.getElementById("showme").innerHTML = currentWord;
             //add piture if lost
-            pic.setAttribute("src", "assets/images/" + currentWord.toLowerCase() + ".jpg");
+            pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
             document.onkeyup = function () { };
             //alert("Game Over!");
         }
