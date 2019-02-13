@@ -155,7 +155,7 @@ var func = {
             pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
             document.onkeyup = function () { };
             //alert("YOU WIN!!!")
-            var x = document.getElementById("sound");
+            var x = document.getElementById("sound1");
             x.play();
         }
     },
@@ -169,8 +169,8 @@ var func = {
             pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
             document.onkeyup = function () { };
             //alert("Game Over!");
-            // var x = document.getElementById("sound");
-            // x.play();
+            var x = document.getElementById("sound2");
+            x.play();
         }
     }
 
@@ -230,7 +230,7 @@ function ifWin(showarray) {
         pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
         document.onkeyup = function () { };
         //alert("YOU WIN!!!")
-        var x = document.getElementById("sound");
+        var x = document.getElementById("sound1");
         x.play();
     }
 };
@@ -246,8 +246,8 @@ function ifLose(live) {
         pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
         document.onkeyup = function () { };
         //alert("Game Over!");
-        // var x = document.getElementById("sound");
-        // x.play();
+        var x = document.getElementById("sound2");
+        x.play();
     }
 };
 
