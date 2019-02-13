@@ -52,7 +52,7 @@ function getWord() {
         }
     }
     wordJoin = showarray.join(" ");
-//starting new game 
+    //starting new game 
     live = 10;
     used = [];
     correct = [];
@@ -95,7 +95,7 @@ function reset() {
     used = [];
     correct = [];
     wrong = [];
-    wordJoin = " ";
+    wordJoin = "";
     document.getElementById("play").innerHTML = "";
     document.getElementById("showbox").innerHTML = wordJoin;
     document.getElementById("usedword").innerHTML = used;
@@ -105,11 +105,12 @@ function reset() {
     document.getElementById("warning").innerHTML = "";
     pic.setAttribute("src", "assets/images/marvel.png");
     document.getElementById("showme").innerHTML = "";
+    document.onkeyup = function () { };
 };
 ////////////////////////////////////////////////////
 //object for all the function HARD MODE
 var func = {
-    isCorrect : function(x, str){
+    isCorrect: function (x, str) {
         for (var i = 0; i < str.length; i++) {
             if (x === str.charAt(i)) {
                 return true;
@@ -117,11 +118,11 @@ var func = {
         }
     },
 
-    isLetterUsed : function(x, arr) {
+    isLetterUsed: function (x, arr) {
         return arr.includes(x);
     },
 
-    showWord : function(x, str, arr) {
+    showWord: function (x, str, arr) {
         arr.length = str.length;
         for (var i = 0; i < str.length; i++) {
             if (x === str.charAt(i)) {
@@ -130,7 +131,7 @@ var func = {
         }
     },
 
-    wordHadUsed: function(x, arr, id1, id2) {
+    wordHadUsed: function (x, arr, id1, id2) {
         if (arr.length === 0 || isLetterUsed(x, arr) === false) {
             arr.push(x);
             document.getElementById(id1).innerHTML = arr.toString();
@@ -140,7 +141,7 @@ var func = {
         }
     },
 
-    ifWin: function(showarray) {
+    ifWin: function (showarray) {
         var count = showarray.length;
         for (var i = 0; i < showarray.length; i++) {
             if (showarray[i] != "_") {
@@ -154,10 +155,12 @@ var func = {
             pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
             document.onkeyup = function () { };
             //alert("YOU WIN!!!")
+            var x = document.getElementById("sound");
+            x.play();
         }
     },
 
-     ifLose:function (live) {
+    ifLose: function (live) {
         if (live === 0) {
             //reset();
             document.getElementById("warning").innerHTML = "Game Over!";
@@ -166,6 +169,8 @@ var func = {
             pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
             document.onkeyup = function () { };
             //alert("Game Over!");
+            // var x = document.getElementById("sound");
+            // x.play();
         }
     }
 
@@ -225,6 +230,8 @@ function ifWin(showarray) {
         pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
         document.onkeyup = function () { };
         //alert("YOU WIN!!!")
+        var x = document.getElementById("sound");
+        x.play();
     }
 };
 
@@ -239,6 +246,8 @@ function ifLose(live) {
         pic.setAttribute("src", "assets/images/" + imagesName + ".jpg");
         document.onkeyup = function () { };
         //alert("Game Over!");
+        // var x = document.getElementById("sound");
+        // x.play();
     }
 };
 
